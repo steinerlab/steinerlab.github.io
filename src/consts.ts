@@ -3,7 +3,7 @@ import type { Metadata, Site } from "@types";
 export const SITE: Site = {
   TITLE: "Steiner Lab",
   DESCRIPTION:
-    "Remote sensing of wetlands, surface hydrology, and the carbon cycle at The City College of New York.",
+    "Remote sensing of wetlands, floods, and urban forests through flagship NASA projects including NISAR, HiFLOWS, and ECOSTRESS at The City College of New York.",
   EMAIL: "nsteiner@ccny.cuny.edu",
   NUM_POSTS_ON_HOMEPAGE: 2,
   NUM_PUBLICATIONS_ON_HOMEPAGE: 3,
@@ -15,7 +15,7 @@ export const HIGHLIGHTAUTHOR = "Nicholas C. Steiner";
 export const HOME: Metadata = {
   TITLE: "Home",
   DESCRIPTION:
-    "Updates from Nicholas Steiner’s remote sensing group in the Department of Earth and Atmospheric Sciences at CCNY.",
+    "Flagship updates on the Steiner Lab's NASA NISAR, HiFLOWS, and ECOSTRESS projects advancing remote sensing of water and urban resilience.",
 };
 
 export const BLOG: Metadata = {
@@ -43,7 +43,7 @@ export const TAGS: Metadata = {
 };
 
 export const ABOUT: Metadata = {
-  TITLE: "About",
+  TITLE: "People",
   DESCRIPTION:
-    "Learn about Nicholas Steiner and the Steiner Lab’s work on satellite remote sensing of terrestrial systems.",
+    "Meet the Steiner Lab team advancing NISAR, HiFLOWS, and ECOSTRESS collaborations in terrestrial remote sensing.",
 };

@@ -19,6 +19,48 @@ const publications: CollectionEntry<"publications">[] = (
 )
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_PUBLICATIONS_ON_HOMEPAGE);
+
+const flagshipProjects = [
+  {
+    id: "nisar",
+    name: "NISAR Wetlands & Freeze/Thaw Validation",
+    logo: "/logos/nisar.svg",
+    summary:
+      "Operations Science Team effort validating wetlands inundation and freeze/thaw algorithms for NASA's global NISAR mission.",
+    role: "Co-Investigator",
+    link: "/blog/2025-nisar-wetlands-freeze-thaw",
+    highlights: [
+      "Developing the freeze/thaw Algorithm Theoretical Basis Document for the NISAR Science Data System.",
+      "Benchmarking wetland inundation accuracy with multi-mission SAR time series across Arctic, tropical, and temperate testbeds.",
+    ],
+  },
+  {
+    id: "hiflows",
+    name: "HiFLOWS Arctic Flood Surveillance",
+    logo: "/logos/hiflows.svg",
+    summary:
+      "High-Latitude Flood and Open Water Surveillance delivers rapid-tasked SAR flood intelligence for Alaskan communities.",
+    role: "Principal Investigator",
+    link: "/blog/2025-hiflows-rapid-arctic-flood-response",
+    highlights: [
+      "Reducing flood mapping latency to under 12 hours using commercial SAR constellations from ICEYE, Capella, and Umbra.",
+      "Building a validation archive that supports NISAR and Sentinel-1 inundation requirements in permafrost terrain.",
+    ],
+  },
+  {
+    id: "ecostress",
+    name: "ECOSTRESS Urban Forest Resilience",
+    logo: "/logos/ecostress.svg",
+    summary:
+      "ECOSTRESS thermal time series quantify how New York City's urban forests mitigate heat and water stress during extremes.",
+    role: "Lead Investigator",
+    link: "/blog/2024-ecostress-urban-forest-water-stress",
+    highlights: [
+      "Partitioning shade and evapotranspiration benefits with ECOSTRESS, UAVSAR, flux towers, and canopy inventories.",
+      "Co-designing analytics with NYC partners to target investments in heat-vulnerable neighborhoods.",
+    ],
+  },
+];
 ---
 
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
@@ -49,7 +91,7 @@ const publications: CollectionEntry<"publications">[] = (
               <p>
                 We pair field campaigns such as SMAPVEX19-22 and WETVEX with physics-based modeling and open data
                 pipelines to deliver decision-ready environmental intelligence. Reach out if you are interested in
-                collaborating or joining the lab’s research efforts.
+                collaborating or joining the lab's research efforts.
               </p>
             </span>
             
@@ -79,14 +121,53 @@ const publications: CollectionEntry<"publications">[] = (
         <section class="animate space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
             <h2 class="font-semibold text-black dark:text-white">
+              Flagship projects
+            </h2>
+          </div>
+          <ul class="not-prose grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {
+              flagshipProjects.map((project) => (
+                <li class="border border-stone-300 bg-white/60 dark:bg-stone-900/60 dark:border-stone-700 rounded-xl p-6 shadow-sm flex flex-col gap-4">
+                  <div class="flex items-center gap-4">
+                    <div class="h-12 w-12 shrink-0">
+                      <img src={project.logo} alt={`${project.name} logo`} class="h-12 w-12 object-contain" loading="lazy" />
+                    </div>
+                    <div>
+                      <p class="text-xs uppercase tracking-wide text-stone-500 dark:text-stone-400">{project.role}</p>
+                      <h3 class="text-lg font-semibold text-black dark:text-white">
+                        <Link href={project.link}>{project.name}</Link>
+                      </h3>
+                    </div>
+                  </div>
+                  <p class="text-sm text-stone-700 dark:text-stone-300">
+                    {project.summary}
+                  </p>
+                  <ul class="list-disc pl-5 space-y-1 text-sm text-stone-700 dark:text-stone-300">
+                    {project.highlights.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                  <div>
+                    <Link href={project.link} class="text-sm font-medium text-red-700 dark:text-red-300 hover:underline">
+                      Read the project update →
+                    </Link>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section class="animate space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-y-2">
+            <h2 class="font-semibold text-black dark:text-white">
               Research Interests
             </h2>
           </div>
           <ul class="not-prose flex flex-col gap-4">
-            <li>Microwave radar and radiometry for surface hydrology</li>
-            <li>Flood and wetland dynamics using SAR, CYGNSS, and lidar fusion</li>
-            <li>Urban ecosystem water stress mapping with ECOSTRESS and UAVSAR</li>
-            <li>Cryosphere change and carbon cycle feedbacks in Arctic and alpine systems</li>
+            <li>Validating NISAR L- and S-band observables for wetlands inundation and freeze/thaw transitions.</li>
+            <li>Rapid-tasked small-satellite SAR workflows for near-real-time flood intelligence in the Arctic.</li>
+            <li>Heat mitigation and water stress analytics for urban forests using ECOSTRESS thermal time series.</li>
           </ul>
         </section>
         
@@ -98,15 +179,16 @@ const publications: CollectionEntry<"publications">[] = (
           </div>
           <ul class="not-prose flex flex-col gap-4 overflow-y-auto max-h-[150px] scroll_bar">
             <li>
-              [2025]: IEEE JSTARS paper on <span class="text-red-600 font-medium">L-band forest scattering</span> with GNSS signals is out.
-              <Link href="https://ieeexplore.ieee.org/document/10850750">Read the article</Link>.
+              [2025]: SMAPVEX19-22 field campaign results publish in IEEE JSTARS, highlighting the lab's contributions to forest soil moisture calibration.
             </li>
             <li>
-              [2024]: Authorea preprint on <span class="text-red-600 font-medium">near-real-time flood mapping</span> using multi-source SAR is available.
-              <Link href="https://nicksteiner.github.io/publication/yang-2024-near/">Access the preprint</Link>.
+              [2025]: NASA Earth Science to Action funds <span class="text-red-600 font-medium">HiFLOWS</span> to deliver hourly-scale SAR flood surveillance across Alaska.
             </li>
             <li>
-              [2023]: The MSSM/CUNY Climate Change Health Impact Initiative backs our work on West Nile virus risk modeling across New York City.
+              [2024]: NISAR Operations Science Team renews our wetlands and freeze/thaw validation work ahead of launch.
+            </li>
+            <li>
+              [2023]: ECOSTRESS urban forest partnership expands with new canopy flux stations in the Bronx and Queens.
             </li>
           </ul>
         </section>

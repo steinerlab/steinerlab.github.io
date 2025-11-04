@@ -11,27 +11,119 @@ import Link from "@components/Link.astro";
     <aside data-pagefind-ignore>
       <div class="space-y-10">
         <div class="animate font-semibold text-black dark:text-white">
-          About
+          People
         </div>
-        <section class="animate not-prose flex flex-col gap-4 text-justify">
-          <p class="text-justify">
-            Nicholas C. Steiner is a Research Assistant Professor in the
-            <Link href="https://www.ccny.cuny.edu/eas">Department of Earth and Atmospheric Sciences at The City College of New York</Link>.
-            His work advances microwave remote sensing of wetlands, terrestrial hydrology, and the carbon cycle with an emphasis on translating satellite observations into decision-ready environmental intelligence.
-          </p>
 
-          <p class="text-justify">
-            Nick leads and contributes to <Link href="https://www.nasa.gov/directorates/earth-science/">NASA Earth Science</Link> projects that harness missions such as
-            NISAR, SMAP, ECOSTRESS, CYGNSS, and GEDI. His team develops multi-sensor approaches that combine radar, radiometry, lidar, and thermal data to monitor inundation dynamics, quantify vegetation water stress, and track cryosphere change from the Arctic to the Amazon.
-          </p>
+        <!-- PI Profile -->
+        <section class="animate not-prose flex flex-col gap-4 text-left">
+          <div class="flex flex-col sm:flex-row items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="bg-neutral-300 w-[180px] h-[220px] rounded-xl overflow-hidden">
+                <img
+                  src="public/headshot_2025_bmp.jpeg"
+                  alt={'Portrait of Dr. Nicholas C. Steiner'}
+                  width={180}
+                  height={220}
+                  class="object-cover w-[180px] h-[220px] rounded-xl"
+                />
+              </div>
+            </div>
+            <div class="flex-1 space-y-4">
+              <p>
+                <strong>Nicholas C. Steiner</strong> is a Research Assistant Professor in the Department of Earth and 
+                Atmospheric Sciences at The City College of New York. His work advances microwave remote sensing of 
+                wetlands, terrestrial hydrology, and the carbon cycle, translating satellite observations into 
+                decision-ready environmental intelligence. He collaborates closely with NASA’s Jet Propulsion Laboratory 
+                and the CUNY Advanced Science Research Center, leading and contributing to NASA Earth Science projects 
+                that harness missions such as NISAR, SMAP, and ECOSTRESS.
+              </p>
 
-          <p class="text-justify">
-            He collaborates closely with partners at NASA’s Jet Propulsion Laboratory, the Advanced Science Research Center at CUNY, and municipal stakeholders in New York City.
-            Field campaigns like SMAPVEX19-22 and the NISAR Tropical Wetlands Validation Experiment inform the lab’s modeling frameworks and open datasets.
-            Nick mentors graduate and undergraduate researchers through project-based learning, including the SUS7502C capstone and quantitative methods courses focused on geospatial data.
+              <p>
+                His team develops multi-sensor approaches that combine radar, radiometry, lidar, and thermal data to 
+                monitor inundation dynamics, quantify vegetation water stress, and track cryosphere change from the 
+                Arctic to the Amazon. Field campaigns like SMAPVEX19–22 and the NISAR Tropical Wetlands Validation 
+                Experiment inform open modeling frameworks and datasets, while his mentorship integrates graduate and 
+                undergraduate researchers through project-based learning focused on geospatial data and environmental 
+                intelligence.              
+                </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Lab Members -->
+        <section class="animate not-prose space-y-6">
+          <h2 class="text-lg font-semibold text-black dark:text-white">
+            Lab Members
+          </h2>
+
+          <!-- Current Students -->
+          <div class="space-y-2">
+            <h3 class="text-base font-semibold text-black dark:text-white">
+              Current Students
+            </h3>
+            <div class="flex flex-col sm:flex-row items-start gap-6">
+              <div class="flex-shrink-0">
+                <div class="bg-neutral-300 w-[140px] h-[180px] rounded-xl overflow-hidden">
+                  <Image
+                    src={'/portrait-nicole.jpg'}
+                    alt={'Portrait of Nicole West'}
+                    width={140}
+                    height={180}
+                    class="object-cover w-[140px] h-[180px] rounded-xl"
+                  />
+                </div>
+              </div>
+              <div class="flex-1">
+                <p class="text-left">
+                  <strong>Nicole West</strong> — is a master’s student in Urban Sustainability at 
+                  The City College of New York. She contributes to the HiFLOWS project, focusing 
+                  on flood monitoring and environmental resilience using satellite data and geospatial analysis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alumni and Collaborators -->
+          <div class="space-y-2">
+            <h3 class="text-base font-semibold text-black dark:text-white">
+              Alumni and Collaborators
+            </h3>
+            <div class="flex flex-col sm:flex-row items-start gap-6">
+              <div class="flex-shrink-0">
+                <div class="bg-neutral-300 w-[140px] h-[180px] rounded-xl overflow-hidden">
+                  <img
+                    src="public/Otillia-Steadman.jpeg"
+                    alt={'Portrait of Otillia Steadman'}
+                    width={140}
+                    height={180}
+                    class="object-cover w-[140px] h-[180px] rounded-xl"
+                  />
+                </div>
+              </div>
+              <div class="flex-1">
+                <p class="text-left">
+                  <strong>Otillia Steadman</strong> —  master’s student in the Steiner Lab at CCNY, she led a study to understand heat 
+                  mitigation by urban canopies in New York Public Housing. ECOSTRESS and LiDAR data were used to quantify canopy 
+                  cooling and advance strategiesfor climate resilience in New York City public housing. 
+                  (Currently at Columbia University)
+                </
+              </div >
+            </div>
+          </div>
+        </section>
+
+        <!-- Mentorship & Training -->
+        <section class="animate not-prose space-y-4">
+          <h2 class="text-lg font-semibold text-black dark:text-white">
+            Mentorship & Training
+          </h2>
+          <p class="text-left">
+            <strong>Nick</strong> has mentored or co-mentored more than a dozen master's and undergraduate researchers across Sustainability in the Urban Environment, Data Science and Engineering, and Earth and Atmospheric Sciences programs.
+            Several mentees have coauthored peer-reviewed publications in <em>The Cryosphere</em>, <em>Geochemistry</em>, and <em>Remote Sensing</em> journals, and his work with the CIPASS initiative supports broader participation in STEM.
           </p>
         </section>
 
+        <!-- Image Grid -->
         <div class="flex flex-col md:flex-row justify-center">
           <div class="my-10 text-center">
             <div class="bg-neutral-300 w-[350px] h-[250px] object-cover rounded-xl -rotate-6 overflow-hidden">

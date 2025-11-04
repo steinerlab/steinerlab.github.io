@@ -9,18 +9,18 @@ const works = [
   {
     company: "City College of New York, CUNY",
     time: "2018-Present",
-    job_title: "Research Assistant Professor, Earth & Atmospheric Sciences",
+    job_title: "Research Assistant Professor (Faculty), Earth & Atmospheric Sciences",
     location: "New York, NY",
     description:
-      "Lead microwave remote sensing research on wetlands, surface hydrology, and the carbon cycle; principal investigator on NASA ECOSTRESS urban forest water stress studies and co-investigator on NISAR, SMAP, and CYGNSS collaborations while mentoring graduate and undergraduate researchers.",
+      "Lead microwave remote sensing research on wetlands, surface hydrology, and the carbon cycle; principal investigator on NASA ECOSTRESS urban forest resilience and co-investigator on NISAR, SMAP, and CYGNSS collaborations while mentoring graduate and undergraduate researchers.",
   },
   {
     company: "CUNY Advanced Science Research Center",
     time: "2021-Present",
-    job_title: "Affiliate Professor, Environmental Initiative",
+    job_title: "Affiliate Professor, Environmental Sciences Initiative",
     location: "New York, NY",
     description:
-      "Integrate satellite observations with urban climate resilience partnerships, connecting CUNY expertise with city agencies on environmental health questions.",
+      "Integrate satellite observations with urban climate resilience partnerships, connecting CUNY expertise with city agencies on environmental health questions and stewarding interdisciplinary research teams.",
   },
   {
     company: "Jet Propulsion Laboratory, Caltech",
@@ -65,6 +65,71 @@ const educations = [
       "Interdisciplinary coursework across environmental science and geography.",
   },
 ];
+
+const awards = [
+  {
+    title: "NASA Group Achievement Award",
+    year: "2014",
+    description: "Carbon in the Arctic Vulnerability Experiment (CARVE) Airborne Science Campaign.",
+  },
+  {
+    title: "Research support portfolio",
+    year: "2025",
+    description: "$4.28M awarded ($0.84M as lead PI) across NASA Earth Science, NSF, and agency partnerships through October 2025.",
+  },
+];
+
+const supports = [
+  {
+    title: "NASA CESRA HiFLOWS",
+    amount: "$352K",
+    role: "Principal Investigator",
+    year: "2025",
+    description: "High-Latitude Flood and Open Water Surveillance delivering rapid-tasked SAR flood intelligence for Alaska.",
+  },
+  {
+    title: "NSF BoCP Implementation: Functional responses to environmental change in South American transitional ecosystems",
+    amount: "$778K",
+    role: "Co-Principal Investigator",
+    year: "2025 (submitted)",
+    description: "Collaborative effort to couple field ecology with remote sensing diagnostics for transitional biomes.",
+  },
+  {
+    title: "NASA NISAR Operations Science Team",
+    amount: "$368K",
+    role: "Co-Investigator",
+    year: "2024",
+    description: "Validating wetlands inundation and freeze/thaw algorithms for the global NISAR mission.",
+  },
+  {
+    title: "MSSM/CUNY Climate Change Health Initiative",
+    amount: "$50K",
+    role: "CUNY Principal Investigator",
+    year: "2023",
+    description: "Evaluating environmental disparities and West Nile virus risk across New York City.",
+  },
+  {
+    title: "NASA ECOSTRESS Urban Forest Resilience",
+    amount: "$378K",
+    role: "Lead Investigator",
+    year: "2022",
+    description: "Fine-resolution assessment of heat mitigation and water stress in New York City urban forests.",
+  },
+  {
+    title: "NASA CYGNSS: Methane emissions from tropical wetlands",
+    amount: "$664K",
+    role: "Co-Investigator",
+    year: "2021",
+    description: "Linking GNSS-R inundation retrievals with methane flux assessments to quantify carbon cycle feedbacks.",
+  },
+  {
+    title: "NASA HMA: Assessing Impacts of Climate-Induced Change on River Flow and Economic Output",
+    amount: "$1.04M",
+    role: "Co-Investigator",
+    year: "2016",
+    description: "Established baseline glacier melt monitoring across the Hindu Kush Himalaya through large-scale SAR analyses.",
+  },
+];
 ---
 
 <Layout title={CV.TITLE} description={CV.DESCRIPTION}>
@@ -86,6 +151,34 @@ const educations = [
           {educations.map((education) => (
             <CVCard institution={education.school} time={education.time} job_title={education.job_title} location={education.location} description={education.description} />)
         )}
+        </ul>
+        <div class="animate font-semibold text-black dark:text-white">
+          Awards
+        </div>
+        <ul class="animate not-prose flex flex-col gap-2">
+          {awards.map((award) => (
+            <li class="rounded-lg border border-stone-300 dark:border-stone-700 bg-white/60 dark:bg-stone-900/60 p-4">
+              <p class="text-sm uppercase tracking-wide text-stone-500 dark:text-stone-400">{award.year}</p>
+              <p class="font-semibold text-black dark:text-white">{award.title}</p>
+              <p class="text-sm text-stone-700 dark:text-stone-300">{award.description}</p>
+            </li>
+          ))}
+        </ul>
+        <div class="animate font-semibold text-black dark:text-white">
+          Selected research support
+        </div>
+        <ul class="animate not-prose flex flex-col gap-4">
+          {supports.map((project) => (
+            <li class="rounded-lg border border-stone-300 dark:border-stone-700 bg-white/60 dark:bg-stone-900/60 p-4">
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <p class="font-semibold text-black dark:text-white">{project.title}</p>
+                <span class="text-sm text-stone-500 dark:text-stone-400">{project.year} · {project.amount}</span>
+              </div>
+              <p class="text-sm text-stone-700 dark:text-stone-300">
+                {project.role}. {project.description}
+              </p>
+            </li>
+          ))}
         </ul>
       </div>
     </aside>

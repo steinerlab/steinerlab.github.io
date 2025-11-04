@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title>HiFLOWS project badge</title>
+  <rect width="128" height="128" rx="16" fill="#0f172a"/>
+  <path d="M28 38h72" stroke="#e2e8f0" stroke-width="6" stroke-linecap="round" stroke-dasharray="12 8"/>
+  <path d="M26 86c10-14 20-14 30 0s20 14 30 0 20-14 30 0" fill="none" stroke="#38bdf8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M64 46c12 14 12 28 0 42-12-14-12-28 0-42z" fill="#38bdf8"/>
+  <text x="64" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#38bdf8">HiFLOWS</text>
+</svg>
