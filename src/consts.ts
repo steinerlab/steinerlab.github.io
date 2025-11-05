@@ -7,7 +7,7 @@ export const SITE: Site = {
   EMAIL: "nsteiner@ccny.cuny.edu",
   NUM_POSTS_ON_HOMEPAGE: 2,
   NUM_PUBLICATIONS_ON_HOMEPAGE: 3,
-  SITEURL: "https://steinerlab.github.io/homepage", // Update here to link the RSS icon to your website rss
+  SITEURL: "https://steinerlab.github.io/steinerlab", // Update here to link the RSS icon to your website rss
 };
 
 export const HIGHLIGHTAUTHOR = "Nicholas C. Steiner";
