@@ -20,7 +20,7 @@ import Link from "@components/Link.astro";
             <div class="flex-shrink-0">
               <div class="bg-neutral-300 w-[180px] h-[220px] rounded-xl overflow-hidden">
                 <img
-                  src="public/headshot_2025_bmp.jpeg"
+                  src={`${import.meta.env.BASE_URL}headshot_2025_bmp.jpeg`}
                   alt={'Portrait of Dr. Nicholas C. Steiner'}
                   width={180}
                   height={220}
@@ -65,7 +65,7 @@ import Link from "@components/Link.astro";
               <div class="flex-shrink-0">
                 <div class="bg-neutral-300 w-[140px] h-[180px] rounded-xl overflow-hidden">
                   <Image
-                    src={'/portrait-nicole.jpg'}
+                    src={`${import.meta.env.BASE_URL}portrait-nicole.jpg`}
                     alt={'Portrait of Nicole West'}
                     width={140}
                     height={180}
@@ -92,7 +92,7 @@ import Link from "@components/Link.astro";
               <div class="flex-shrink-0">
                 <div class="bg-neutral-300 w-[140px] h-[180px] rounded-xl overflow-hidden">
                   <img
-                    src="public/Otillia-Steadman.jpeg"
+                    src={`${import.meta.env.BASE_URL}Otillia-Steadman.jpeg`}
                     alt={'Portrait of Otillia Steadman'}
                     width={140}
                     height={180}
@@ -106,7 +106,7 @@ import Link from "@components/Link.astro";
                   mitigation by urban canopies in New York Public Housing. ECOSTRESS and LiDAR data were used to quantify canopy 
                   cooling and advance strategiesfor climate resilience in New York City public housing. 
                   (Currently at Columbia University)
-                </
+                </p>
               </div >
             </div>
           </div>
@@ -128,7 +128,7 @@ import Link from "@components/Link.astro";
           <div class="my-10 text-center">
             <div class="bg-neutral-300 w-[350px] h-[250px] object-cover rounded-xl -rotate-6 overflow-hidden">
               <Image
-                src={'/paper-teaser.jpg'}
+                src={`${import.meta.env.BASE_URL}paper-teaser.jpg`}
                 alt={'False-color remote sensing composite used in Steiner Lab analyses.'}
                 width={350}
                 height={250}
@@ -142,7 +142,7 @@ import Link from "@components/Link.astro";
           <div class="mx-10 my-10 text-center">
             <div class="bg-neutral-300 w-[150px] h-[250px] object-cover rounded-xl rotate-6 mx-auto sm:ml-auto">
               <Image
-                src={'/astro-sphere.jpg'}
+                src={`${import.meta.env.BASE_URL}astro-sphere.jpg`}
                 alt={'Synthetic aperture radar flight line over urban canopy.'}
                 width={150}
                 height={250}
@@ -158,3 +158,4 @@ import Link from "@components/Link.astro";
     </aside>
   </Container>
 </Layout>
+

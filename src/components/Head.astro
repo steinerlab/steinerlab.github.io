@@ -14,6 +14,7 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
+const pagefindBase = import.meta.env.BASE_URL + "pagefind/";
 ---
 
 <!-- Global Metadata -->
@@ -49,8 +50,8 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
 <!-- PageFind -->
-<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
-<script is:inline src="/pagefind/pagefind-ui.js"></script>
+<link href={`${pagefindBase}pagefind-ui.css`} rel="stylesheet" />
+<script is:inline src={`${pagefindBase}pagefind-ui.js`}></script>
 
 <ViewTransitions />
 
