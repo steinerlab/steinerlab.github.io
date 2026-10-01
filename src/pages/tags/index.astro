@@ -13,7 +13,6 @@ const tags =  blog.flatMap(post => post.data.tags).filter((tag, index, self) => 
 
 <Layout title={TAGS.TITLE} description={TAGS.DESCRIPTION}>
   <Container>
-    <aside data-pagefind-ignore>
       <div class="space-y-10">
         <div class="animate font-semibold text-black dark:text-white">
           Tags
@@ -28,6 +27,5 @@ const tags =  blog.flatMap(post => post.data.tags).filter((tag, index, self) => 
             ))}
         </ul>
       </div>
-    </aside>
   </Container>
 </Layout>

@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import { SITE, HOME } from "@consts";
+import { NEWS } from "@data/news";
 import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
 import { getCollection } from "astro:content";
@@ -65,7 +66,6 @@ const flagshipProjects = [
 
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
-    <aside data-pagefind-ignore>
       <h1 class="animate font-semibold text-black dark:text-white">
         Steiner Lab | Remote Sensing of Terrestrial Hydrology
       </h1>
@@ -171,18 +171,11 @@ const flagshipProjects = [
             </h2>
           </div>
           <ul class="not-prose flex flex-col gap-4 overflow-y-auto max-h-[150px] scroll_bar">
-            <li>
-              [2025]: SMAPVEX19-22 field campaign results publish in IEEE JSTARS, highlighting the lab's contributions to forest soil moisture calibration.
-            </li>
-            <li>
-              [2025]: NASA Earth Science to Action funds <span class="text-red-600 font-medium">HiFLOWS</span> to deliver hourly-scale SAR flood surveillance across Alaska.
-            </li>
-            <li>
-              [2024]: NISAR Operations Science Team renews our wetlands and freeze/thaw validation work ahead of launch.
-            </li>
-            <li>
-              [2023]: ECOSTRESS urban forest partnership expands with new canopy flux stations in the Bronx and Queens.
-            </li>
+            {NEWS.map((item) => (
+              <li>
+                [{item.date}]: <span set:html={item.html} />
+              </li>
+            ))}
           </ul>
         </section>
 
@@ -223,6 +216,5 @@ const flagshipProjects = [
         </section>
 
       </div>
-    </aside>
   </Container>
 </Layout>
