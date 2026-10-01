@@ -62,19 +62,13 @@ import Link from "@components/Link.astro";
             </h3>
             <div class="flex flex-col sm:flex-row items-start gap-6">
               <div class="flex-shrink-0">
-                <div class="bg-neutral-300 w-[140px] h-[180px] rounded-xl overflow-hidden">
-                  <Image
-                    src={`${import.meta.env.BASE_URL}portrait-nicole.jpg`}
-                    alt={'Portrait of Nicole West'}
-                    width={140}
-                    height={180}
-                    class="object-cover w-[140px] h-[180px] rounded-xl"
-                  />
+                <div class="bg-neutral-200 dark:bg-neutral-800 w-[140px] h-[180px] rounded-xl flex items-center justify-center" role="img" aria-label="Portrait of Nicole West (photo coming soon)">
+                  <span class="text-3xl font-semibold text-neutral-400 dark:text-neutral-500">NW</span>
                 </div>
               </div>
               <div class="flex-1">
                 <p class="text-left">
-                  <strong>Nicole West</strong> — is a master’s student in Urban Sustainability at 
+                  <strong>Nicole West</strong> is a master’s student in Urban Sustainability at 
                   The City College of New York. She contributes to the HiFLOWS project, focusing 
                   on flood monitoring and environmental resilience using satellite data and geospatial analysis.
                 </p>
@@ -101,10 +95,9 @@ import Link from "@components/Link.astro";
               </div>
               <div class="flex-1">
                 <p class="text-left">
-                  <strong>Otillia Steadman</strong> —  master’s student in the Steiner Lab at CCNY, she led a study to understand heat 
-                  mitigation by urban canopies in New York Public Housing. ECOSTRESS and LiDAR data were used to quantify canopy 
-                  cooling and advance strategiesfor climate resilience in New York City public housing. 
-                  (Currently at Columbia University)
+                  <strong>Otillia Steadman</strong> — former master’s student in the Steiner Lab at CCNY (now at Columbia University). She led a study on heat 
+                  mitigation by urban canopies in New York City public housing, using ECOSTRESS and LiDAR data to quantify canopy 
+                  cooling and advance strategies for climate resilience.
                 </p>
               </div >
             </div>
@@ -122,8 +115,8 @@ import Link from "@components/Link.astro";
           </p>
         </section>
 
-        <!-- Image Grid -->
-        <div class="flex flex-col md:flex-row justify-center">
+        <!-- Image -->
+        <div class="flex justify-center">
           <div class="my-10 text-center">
             <div class="bg-neutral-300 w-[350px] h-[250px] object-cover rounded-xl -rotate-6 overflow-hidden">
               <Image
@@ -136,20 +129,6 @@ import Link from "@components/Link.astro";
             </div>
             <p class="mt-4 text-sm">
               Multi-sensor composites help quantify wetland inundation dynamics and vegetation structure.
-            </p>
-          </div>
-          <div class="mx-10 my-10 text-center">
-            <div class="bg-neutral-300 w-[150px] h-[250px] object-cover rounded-xl rotate-6 mx-auto sm:ml-auto">
-              <Image
-                src={`${import.meta.env.BASE_URL}astro-sphere.jpg`}
-                alt={'Synthetic aperture radar flight line over urban canopy.'}
-                width={150}
-                height={250}
-                class="w-[150px] h-[250px] object-cover rounded-xl "
-              />
-            </div>
-            <p class="mt-4 text-sm">
-              UAVSAR and ECOSTRESS observations underpin our work on urban forest heat mitigation in New York City.
             </p>
           </div>
         </div>
