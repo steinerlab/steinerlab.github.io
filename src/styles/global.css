@@ -20,14 +20,19 @@ body {
 body {
   @apply font-sans antialiased;
   @apply flex flex-col;
-  @apply bg-neutral-300 dark:bg-slate-900;
-  @apply text-black/75 dark:text-white/75;
+  @apply bg-white dark:bg-abyss;
+  @apply text-stone-700 dark:text-slate-300;
+}
+
+::selection {
+  @apply bg-teal-600/25 dark:bg-teal-400/25;
 }
 
 header {
   @apply fixed left-0 right-0 top-0 z-50 py-6;
-  @apply bg-neutral-100/75 dark:bg-neutral-900/75;
-  @apply saturate-200 backdrop-blur-sm;
+  @apply bg-white/80 dark:bg-abyss/80;
+  @apply saturate-150 backdrop-blur-md;
+  @apply border-b border-transparent dark:border-white/10;
 }
 
 main {
@@ -36,29 +41,54 @@ main {
 
 footer {
   @apply py-6 text-sm;
+  @apply border-t border-stone-200/70 dark:border-white/10;
+  @apply text-stone-500 dark:text-slate-400;
 }
 
 article {
   @apply prose prose-neutral max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
-  @apply prose-headings:font-semibold;
-  @apply prose-headings:text-black prose-headings:dark:text-white;
+  @apply prose-headings:font-display prose-headings:font-semibold;
+  @apply prose-headings:text-black prose-headings:dark:text-slate-100;
 }
 
 @layer utilities {
   article a {
     @apply font-sans text-current underline underline-offset-[3px];
-    @apply decoration-black/30 dark:decoration-white/30;
+    @apply decoration-teal-600/40 dark:decoration-teal-400/40;
     @apply transition-colors duration-300 ease-in-out;
   }
   article a:hover {
-    @apply text-black dark:text-white;
-    @apply decoration-black/50 dark:decoration-white/50;
+    @apply text-teal-700 dark:text-teal-300;
+    @apply decoration-teal-600/70 dark:decoration-teal-300/70;
   }
 }
 
+/* Mission-control textures */
+.bg-mission-grid {
+  background-image:
+    linear-gradient(to right, rgb(148 163 184 / 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(148 163 184 / 0.07) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.bg-mission-scanlines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgb(2 6 16 / 0.25) 4px
+  );
+}
+
+.bg-mission-glow {
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 10%, rgb(45 212 191 / 0.12), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 85% 90%, rgb(34 211 238 / 0.08), transparent 70%);
+}
+
 .scroll_bar {
-  scrollbar-width: thin; 
-  scrollbar-color:  #1e293b #0f172a ; 
+  scrollbar-width: thin;
+  scrollbar-color: #2dd4bf #0b1526;
 }
 
 .animate {

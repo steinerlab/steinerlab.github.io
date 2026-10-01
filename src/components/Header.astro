@@ -3,41 +3,53 @@ import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
 import { SITE } from "@consts";
 import ProgressBar from "./ProgressBar.astro";
+
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+const navItems = [
+  { href: "/blog", label: "blog" },
+  { href: "/publications", label: "research" },
+  { href: "/cv", label: "cv" },
+  { href: "/about", label: "people" },
+  { href: "/tags", label: "tags" },
+];
+const isActive = (href: string) =>
+  pathname === href || pathname.startsWith(href + "/");
 ---
 
-<header transition:persist>
+<header>
   <Container>
     <div class="flex flex-wrap justify-between gap-y-2">
       <Link href="/" underline={false}>
-        <div class="font-semibold">
+        <div class="font-display flex items-center gap-2 font-bold tracking-tight text-black dark:text-slate-100">
+          <span aria-hidden="true" class="inline-block size-2.5 rounded-[3px] bg-teal-400"></span>
           {SITE.TITLE}
         </div>
       </Link>
-      <nav class="flex items-center gap-1 text-sm">
-        <Link href="/blog">blog</Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/publications">research</Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/cv">cv</Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/about">people</Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/tags">tags</Link>
-        <span>
-          {`/`}
-        </span>
+      <nav class="flex items-center gap-1 font-mono text-[13px]">
+        {
+          navItems.map((item, i) => (
+            <>
+              {i > 0 && (
+                <span class="text-stone-300 dark:text-slate-600">{`/`}</span>
+              )}
+              <Link
+                href={item.href}
+                class={
+                  isActive(item.href)
+                    ? "text-teal-700 underline decoration-teal-500/70 underline-offset-[5px] dark:text-teal-300 dark:decoration-teal-400/70"
+                    : undefined
+                }
+              >
+                {item.label}
+              </Link>
+            </>
+          ))
+        }
+        <span class="text-stone-300 dark:text-slate-600">{`/`}</span>
         <button
           id="magnifying-glass"
           aria-label="Search"
-          class="flex items-center rounded border border-black/15 bg-neutral-100 px-2 py-1 text-xs transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:bg-neutral-900 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+          class="flex items-center rounded border border-black/15 bg-neutral-100 px-2 py-1 font-sans text-xs transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/10 dark:bg-white/5 dark:hover:border-teal-400/40 dark:hover:bg-white/10 dark:hover:text-teal-300 dark:focus-visible:bg-white/10 dark:focus-visible:text-teal-300"
         >
           <svg
             height="16"

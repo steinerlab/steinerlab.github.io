@@ -10,17 +10,17 @@ import Link from "@components/Link.astro";
   <Container>
       <div class="space-y-10">
         <div class="animate">
-          <h1 class="text-3xl font-bold tracking-tight text-black dark:text-white">
+          <h1 class="font-display text-3xl font-bold tracking-tight text-black dark:text-slate-100">
             People
           </h1>
-          <div class="mt-3 h-1 w-10 rounded-full bg-neutral-300 dark:bg-neutral-600"></div>
+          <div class="mt-3 h-1 w-10 rounded-full bg-teal-600/50 dark:bg-teal-400"></div>
         </div>
 
         <!-- PI Profile -->
         <section class="animate not-prose flex flex-col gap-4 text-left">
           <div class="flex flex-col sm:flex-row items-start gap-6">
             <div class="flex-shrink-0">
-              <div class="bg-neutral-300 w-[180px] h-[220px] rounded-xl overflow-hidden">
+              <div class="bg-neutral-300 dark:bg-hull w-[180px] h-[220px] rounded-xl overflow-hidden border border-transparent dark:border-white/10">
                 <img
                   src={`${import.meta.env.BASE_URL}headshot_2025_bmp.jpeg`}
                   alt={'Portrait of Dr. Nicholas C. Steiner'}
@@ -30,8 +30,8 @@ import Link from "@components/Link.astro";
                 />
               </div>
             </div>
-            <div class="flex-1 space-y-4">
-              <span class="inline-block rounded-full border border-neutral-200 dark:border-neutral-700 px-2.5 py-0.5 text-xs font-medium text-neutral-500 dark:text-neutral-400">
+            <div class="flex-1 space-y-4 text-stone-700 dark:text-slate-300">
+              <span class="inline-block rounded-full border border-teal-600/25 bg-teal-600/10 px-2.5 py-0.5 text-xs font-medium text-teal-800 dark:border-teal-400/25 dark:bg-teal-400/10 dark:text-teal-300">
                 Principal Investigator
               </span>
               <p>
@@ -57,23 +57,23 @@ import Link from "@components/Link.astro";
 
         <!-- Lab Members -->
         <section class="animate not-prose space-y-6">
-          <h2 class="text-lg font-semibold text-black dark:text-white">
+          <h2 class="font-display text-lg font-semibold tracking-tight text-black dark:text-slate-100">
             Lab Members
           </h2>
 
           <!-- Current Students -->
           <div class="space-y-2">
-            <h3 class="text-base font-semibold text-black dark:text-white">
+            <h3 class="font-display text-base font-semibold tracking-tight text-black dark:text-slate-100">
               Current Students
             </h3>
             <div class="flex flex-col sm:flex-row items-start gap-6">
               <div class="flex-shrink-0">
-                <div class="bg-neutral-200 dark:bg-neutral-800 w-[140px] h-[180px] rounded-xl flex items-center justify-center" role="img" aria-label="Portrait of Nicole West (photo coming soon)">
-                  <span class="text-3xl font-semibold text-neutral-400 dark:text-neutral-500">NW</span>
+                <div class="bg-white dark:bg-hull w-[140px] h-[180px] rounded-xl border border-stone-200 dark:border-white/10 flex items-center justify-center" role="img" aria-label="Portrait of Nicole West (photo coming soon)">
+                  <span class="font-display text-3xl font-semibold text-teal-700 dark:text-teal-300">NW</span>
                 </div>
               </div>
               <div class="flex-1 space-y-2">
-                <span class="inline-block rounded-full border border-neutral-200 dark:border-neutral-700 px-2.5 py-0.5 text-xs font-medium text-neutral-500 dark:text-neutral-400">
+                <span class="inline-block rounded-full border border-teal-600/25 bg-teal-600/10 px-2.5 py-0.5 text-xs font-medium text-teal-800 dark:border-teal-400/25 dark:bg-teal-400/10 dark:text-teal-300">
                   Master’s student
                 </span>
                 <p class="text-left">
@@ -87,12 +87,12 @@ import Link from "@components/Link.astro";
 
           <!-- Alumni and Collaborators -->
           <div class="space-y-2">
-            <h3 class="text-base font-semibold text-black dark:text-white">
+            <h3 class="font-display text-base font-semibold tracking-tight text-black dark:text-slate-100">
               Alumni and Collaborators
             </h3>
             <div class="flex flex-col sm:flex-row items-start gap-6">
               <div class="flex-shrink-0">
-                <div class="bg-neutral-300 w-[140px] h-[180px] rounded-xl overflow-hidden">
+                <div class="bg-neutral-300 dark:bg-hull w-[140px] h-[180px] rounded-xl overflow-hidden border border-transparent dark:border-white/10">
                   <img
                     src={`${import.meta.env.BASE_URL}Otillia-Steadman.jpeg`}
                     alt={'Portrait of Otillia Steadman'}
@@ -103,7 +103,7 @@ import Link from "@components/Link.astro";
                 </div>
               </div>
               <div class="flex-1 space-y-2">
-                <span class="inline-block rounded-full border border-neutral-200 dark:border-neutral-700 px-2.5 py-0.5 text-xs font-medium text-neutral-500 dark:text-neutral-400">
+                <span class="inline-block rounded-full border border-teal-600/25 bg-teal-600/10 px-2.5 py-0.5 text-xs font-medium text-teal-800 dark:border-teal-400/25 dark:bg-teal-400/10 dark:text-teal-300">
                   Alumni · now at Columbia
                 </span>
                 <p class="text-left">
@@ -118,7 +118,7 @@ import Link from "@components/Link.astro";
 
         <!-- Mentorship & Training -->
         <section class="animate not-prose space-y-4">
-          <h2 class="text-lg font-semibold text-black dark:text-white">
+          <h2 class="font-display text-lg font-semibold tracking-tight text-black dark:text-slate-100">
             Mentorship & Training
           </h2>
           <p class="text-left">
@@ -130,7 +130,7 @@ import Link from "@components/Link.astro";
         <!-- Image -->
         <div class="flex justify-center">
           <div class="my-10 text-center">
-            <div class="bg-neutral-300 w-[350px] h-[250px] object-cover rounded-xl -rotate-6 overflow-hidden">
+            <div class="bg-neutral-300 dark:bg-hull w-[350px] h-[250px] object-cover rounded-xl -rotate-6 overflow-hidden border border-transparent dark:border-white/10">
               <Image
                 src={`${import.meta.env.BASE_URL}paper-teaser.jpg`}
                 alt={'False-color remote sensing composite used in Steiner Lab analyses.'}

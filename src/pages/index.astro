@@ -66,40 +66,42 @@ const flagshipProjects = [
 
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
-      <h1 class="animate font-semibold text-black dark:text-white">
-        Steiner Lab | Remote Sensing of Terrestrial Hydrology
-      </h1>
+      <section class="animate relative overflow-hidden rounded-2xl border border-white/10 bg-abyss">
+        <div class="absolute inset-0 bg-mission-grid" aria-hidden="true"></div>
+        <div class="absolute inset-0 bg-mission-glow" aria-hidden="true"></div>
+        <div class="absolute inset-0 bg-mission-scanlines opacity-60" aria-hidden="true"></div>
+        <div class="relative px-6 py-10 sm:px-10 sm:py-14">
+          <p class="font-mono text-xs uppercase tracking-[0.25em] text-teal-300">
+            <span class="text-teal-500" aria-hidden="true">//</span> Microwave remote sensing
+          </p>
+          <h1 class="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-slate-100 sm:text-5xl">
+            Steiner Lab <span class="font-light text-slate-500">|</span> Remote Sensing of <span class="text-teal-300">Terrestrial Hydrology</span>
+          </h1>
+          <div class="mt-6 max-w-2xl space-y-4 text-[15px] leading-relaxed text-slate-300">
+            <p>
+              The Steiner Lab is led by <Link href="https://www.ccny.cuny.edu/profiles/nick-steiner">Nicholas C. Steiner</Link> in the
+              Department of Earth and Atmospheric Sciences at <Link href="https://www.ccny.cuny.edu/eas">The City College of New York</Link>.
+              We study how microwave remote sensing captures terrestrial water and carbon cycle processes across scales.
+            </p>
+            <p>
+              Our team develops radar, thermal, and lidar approaches with missions such as
+              <Link href="https://nisar.jpl.nasa.gov/">NASA NISAR</Link>,
+              <Link href="https://smap.jpl.nasa.gov/">SMAP</Link>,
+              <Link href="https://ecostress.jpl.nasa.gov/">ECOSTRESS</Link>, and
+              <Link href="https://www.nasa.gov/mission/cygnss/">CYGNSS</Link>
+              to resolve wetland dynamics, flood hazards, and ecosystem resilience from the Arctic to the Amazon.
+            </p>
+            <p>
+              We combine field campaigns such as SMAPVEX19–22 and WETVEX with physics-based modeling and open data
+              pipelines to support applied decision making. If you’re interested in collaborating or joining the lab, get in touch.
+            </p>
+          </div>
+        </div>
+      </section>
       <div class="space-y-16">
-        <section>
-          <article class="space-y-4">
-            <span class="animate">
-              <p>
-                The Steiner Lab is led by <Link href="https://www.ccny.cuny.edu/profiles/nick-steiner">Nicholas C. Steiner</Link> in the
-                Department of Earth and Atmospheric Sciences at <Link href="https://www.ccny.cuny.edu/eas">The City College of New York</Link>.
-                We study how microwave remote sensing captures terrestrial water and carbon cycle processes across scales.
-              </p>
-              <p>
-                Our team develops radar, thermal, and lidar approaches with missions such as
-                <Link href="https://nisar.jpl.nasa.gov/">NASA NISAR</Link>,
-                <Link href="https://smap.jpl.nasa.gov/">SMAP</Link>,
-                <Link href="https://ecostress.jpl.nasa.gov/">ECOSTRESS</Link>, and
-                <Link href="https://www.nasa.gov/mission/cygnss/">CYGNSS</Link>
-                to resolve wetland dynamics, flood hazards, and ecosystem resilience from the Arctic to the Amazon.
-              </p>
-            </span>
-            <span class="animate">
-              <p>
-                We combine field campaigns such as SMAPVEX19–22 and WETVEX with physics-based modeling and open data 
-                pipelines to support applied decision making. If you’re interested in collaborating or joining the lab, get in touch.              </p>
-            </span>
-            
-          </article>
-        </section>
-
-
         <section class="animate space-y-6">
           <span class="animate">
-            <h4 class="font-semibold text-black dark:text-white">
+            <h4 class="font-display font-semibold tracking-tight text-black dark:text-slate-100">
               Let's Connect
             </h4>
             <article>
@@ -113,35 +115,35 @@ const flagshipProjects = [
 
         <section class="animate space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
+            <h2 class="font-display font-semibold tracking-tight text-black dark:text-slate-100">
               Projects
             </h2>
           </div>
           <ul class="not-prose grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {
               flagshipProjects.map((project) => (
-                <li class="border border-stone-300 bg-white/60 dark:bg-stone-900/60 dark:border-stone-700 rounded-xl p-6 shadow-sm flex flex-col gap-4">
+                <li class="group border border-stone-200 bg-white dark:border-white/10 dark:bg-hull rounded-xl p-6 shadow-sm flex flex-col gap-4 transition-all duration-300 ease-in-out hover:border-teal-600/40 dark:hover:border-teal-400/40 dark:hover:shadow-[0_0_40px_-12px_rgba(45,212,191,0.35)]">
                   <div class="flex items-center gap-4">
                     <div class="h-12 w-12 shrink-0">
                       <img src={project.logo} alt={`${project.name} logo`} class="h-12 w-12 object-contain" loading="lazy" />
                     </div>
                     <div>
-                      <p class="text-xs uppercase tracking-wide text-stone-500 dark:text-stone-400">{project.role}</p>
-                      <h3 class="text-lg font-semibold text-black dark:text-white">
+                      <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-teal-700 dark:text-teal-300/90">{project.role}</p>
+                      <h3 class="font-display text-lg font-semibold text-black dark:text-slate-100 group-hover:text-teal-700 dark:group-hover:text-teal-300 transition-colors duration-300">
                         <Link href={project.link}>{project.name}</Link>
                       </h3>
                     </div>
                   </div>
-                  <p class="text-sm text-stone-700 dark:text-stone-300">
+                  <p class="text-sm text-stone-700 dark:text-slate-300">
                     {project.summary}
                   </p>
-                  <ul class="list-disc pl-5 space-y-1 text-sm text-stone-700 dark:text-stone-300">
+                  <ul class="list-disc pl-5 space-y-1 text-sm text-stone-700 dark:text-slate-300 marker:text-teal-600 dark:marker:text-teal-400/70">
                     {project.highlights.map((item) => (
                       <li>{item}</li>
                     ))}
                   </ul>
                   <div>
-                    <Link href={project.link} class="text-sm font-medium text-red-700 dark:text-red-300 hover:underline">
+                    <Link href={project.link} class="text-sm font-medium text-teal-700 dark:text-teal-300 hover:underline">
                       Read the project update →
                     </Link>
                   </div>
@@ -153,7 +155,7 @@ const flagshipProjects = [
 
         <section class="animate space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
+            <h2 class="font-display font-semibold tracking-tight text-black dark:text-slate-100">
               Research Interests
             </h2>
           </div>
@@ -166,14 +168,15 @@ const flagshipProjects = [
         
         <section class="animate space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
+            <h2 class="font-display font-semibold tracking-tight text-black dark:text-slate-100">
               News
             </h2>
           </div>
           <ul class="not-prose flex flex-col gap-4 overflow-y-auto max-h-[150px] scroll_bar">
             {NEWS.map((item) => (
-              <li>
-                [{item.date}]: <span set:html={item.html} />
+              <li class="text-sm">
+                <span class="font-mono text-xs text-teal-700 dark:text-teal-300">[{item.date}]</span>
+                <span set:html={item.html} />
               </li>
             ))}
           </ul>
@@ -181,7 +184,7 @@ const flagshipProjects = [
 
         <section class="animate space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
+            <h2 class="font-display font-semibold tracking-tight text-black dark:text-slate-100">
               Recent research
             </h2>
             <Link href="/publications"> See all research </Link>
@@ -199,7 +202,7 @@ const flagshipProjects = [
 
         <section class="animate space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
+            <h2 class="font-display font-semibold tracking-tight text-black dark:text-slate-100">
               Latest posts
             </h2>
             <Link href="/blog"> See all posts </Link>

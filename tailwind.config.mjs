@@ -8,6 +8,11 @@ export default {
       fontFamily: {
         sans: ["Geist Sans", ...defaultTheme.fontFamily.sans],
         mono: ["Geist Mono", ...defaultTheme.fontFamily.mono],
+        display: ["Space Grotesk", "Geist Sans", ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        abyss: "#050b18", // page background (dark)
+        hull: "#0b1526", // card / surface (dark)
       },
     },
   },
