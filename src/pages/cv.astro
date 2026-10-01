@@ -134,51 +134,57 @@ const supports = [
 
 <Layout title={CV.TITLE} description={CV.DESCRIPTION}>
   <Container>
-      <div class="space-y-2 md:space-y-10">
-        <div class="animate font-display font-semibold tracking-tight text-black dark:text-slate-100">
-          Work Experience
-        </div>
-        <ul class="animate not-prose flex flex-col gap-4">
-          {works.map((work) => (
-              <CVCard institution={work.company} time={work.time} job_title={work.job_title} location={work.location} description={work.description} />)
+      <h1 class="font-sans text-[2.4rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-ink sm:text-[3rem]">CV</h1>
+      <div class="mt-12 space-y-16">
+        <section>
+          <h2 class="section-title">Work Experience</h2>
+          <ul class="not-prose ruled border-y border-rule">
+            {works.map((work) => (
+                <CVCard institution={work.company} time={work.time} job_title={work.job_title} location={work.location} description={work.description} />)
+            )}
+          </ul>
+        </section>
+        <section>
+          <h2 class="section-title">Education</h2>
+          <ul class="not-prose ruled border-y border-rule">
+            {educations.map((education) => (
+              <CVCard institution={education.school} time={education.time} job_title={education.job_title} location={education.location} description={education.description} />)
           )}
-        </ul>
-        <div class="animate font-display font-semibold tracking-tight text-black dark:text-slate-100">
-          Education
-        </div>
-        <ul class="animate not-prose flex flex-col gap-4">
-          {educations.map((education) => (
-            <CVCard institution={education.school} time={education.time} job_title={education.job_title} location={education.location} description={education.description} />)
-        )}
-        </ul>
-        <div class="animate font-display font-semibold tracking-tight text-black dark:text-slate-100">
-          Awards
-        </div>
-        <ul class="animate not-prose flex flex-col gap-2">
-          {awards.map((award) => (
-            <li class="rounded-lg border border-stone-200 dark:border-white/10 bg-white dark:bg-hull/70 p-4 transition-colors duration-300 hover:border-teal-600/30 dark:hover:border-teal-400/30">
-              <p class="font-mono text-xs uppercase tracking-[0.18em] text-teal-700 dark:text-teal-300">{award.year}</p>
-              <p class="font-display font-semibold text-black dark:text-slate-100">{award.title}</p>
-              <p class="text-sm text-stone-600 dark:text-slate-400">{award.description}</p>
-            </li>
-          ))}
-        </ul>
-        <div class="animate font-display font-semibold tracking-tight text-black dark:text-slate-100">
-          Selected research support
-        </div>
-        <ul class="animate not-prose flex flex-col gap-4">
-          {supports.map((project) => (
-            <li class="rounded-lg border border-stone-200 dark:border-white/10 bg-white dark:bg-hull/70 p-4 transition-colors duration-300 hover:border-teal-600/30 dark:hover:border-teal-400/30">
-              <div class="flex flex-wrap items-baseline justify-between gap-2">
-                <p class="font-display font-semibold text-black dark:text-slate-100">{project.title}</p>
-                <span class="font-mono text-xs text-teal-700 dark:text-teal-300">{project.year} · {project.amount}</span>
-              </div>
-              <p class="text-sm text-stone-600 dark:text-slate-400">
-                {project.role}. {project.description}
-              </p>
-            </li>
-          ))}
-        </ul>
+          </ul>
+        </section>
+        <section>
+          <h2 class="section-title">Awards</h2>
+          <ul class="not-prose ruled border-y border-rule">
+            {awards.map((award) => (
+              <li class="grid gap-x-6 gap-y-1 py-5 sm:grid-cols-[7.5rem_1fr]">
+                <p class="meta pt-0.5">{award.year}</p>
+                <div class="max-w-measure">
+                  <p class="font-sans text-[17px] font-semibold text-ink">{award.title}</p>
+                  <p class="mt-1 text-[16px] text-muted">{award.description}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section>
+          <h2 class="section-title">Selected research support</h2>
+          <ul class="not-prose ruled border-y border-rule">
+            {supports.map((project) => (
+              <li class="grid gap-x-6 gap-y-1 py-5 sm:grid-cols-[7.5rem_1fr]">
+                <p class="meta pt-0.5">{project.year}</p>
+                <div class="max-w-measure">
+                  <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+                    <p class="font-sans text-[17px] font-semibold leading-snug text-ink">{project.title}</p>
+                    <span class="meta">{project.amount}</span>
+                  </div>
+                  <p class="mt-1 text-[16px] text-muted">
+                    {project.role}. {project.description}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
       </div>
   </Container>
 </Layout>

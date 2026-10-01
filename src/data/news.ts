@@ -1,5 +1,5 @@
 // Lab news items, newest first. Edit this array to add or update news entries;
-// the homepage renders the full list in a scrollable box.
+// the homepage renders the full list.
 
 export type NewsItem = {
   /** Display date, e.g. "2025" or "2025-03". */
@@ -15,7 +15,7 @@ export const NEWS: NewsItem[] = [
   },
   {
     date: "2025",
-    html: `NASA Earth Science to Action funds <span class="text-red-600 font-medium">HiFLOWS</span> to deliver hourly-scale SAR flood surveillance across Alaska.`,
+    html: `NASA Earth Science to Action funds <span class="font-semibold">HiFLOWS</span> to deliver hourly-scale SAR flood surveillance across Alaska.`,
   },
   {
     date: "2024",

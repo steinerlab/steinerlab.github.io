@@ -2,7 +2,6 @@
 import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
 import { SITE } from "@consts";
-import ProgressBar from "./ProgressBar.astro";
 
 const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
 const navItems = [
@@ -18,52 +17,40 @@ const isActive = (href: string) =>
 
 <header>
   <Container>
-    <div class="flex flex-wrap justify-between gap-y-2">
-      <Link href="/" underline={false}>
-        <div class="font-display flex items-center gap-2 font-bold tracking-tight text-black dark:text-slate-100">
-          <span aria-hidden="true" class="inline-block size-2.5 rounded-[3px] bg-teal-400"></span>
-          {SITE.TITLE}
-        </div>
-      </Link>
-      <nav class="flex items-center gap-1 font-mono text-[13px]">
+    <div class="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-3">
+      <a href={import.meta.env.BASE_URL} class="font-sans text-lg font-extrabold tracking-[-0.02em] text-ink hover:text-water">
+        {SITE.TITLE}
+      </a>
+      <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-1 text-[15px]">
         {
-          navItems.map((item, i) => (
-            <>
-              {i > 0 && (
-                <span class="text-stone-300 dark:text-slate-600">{`/`}</span>
-              )}
-              <Link
-                href={item.href}
-                class={
-                  isActive(item.href)
-                    ? "text-teal-700 underline decoration-teal-500/70 underline-offset-[5px] dark:text-teal-300 dark:decoration-teal-400/70"
-                    : undefined
-                }
-              >
-                {item.label}
-              </Link>
-            </>
+          navItems.map((item) => (
+            <Link
+              href={item.href}
+              underline={false}
+              aria-current={isActive(item.href) ? "page" : undefined}
+              class={
+                isActive(item.href)
+                  ? "text-ink underline decoration-water decoration-2 underline-offset-[6px]"
+                  : "text-muted hover:text-ink"
+              }
+            >
+              {item.label}
+            </Link>
           ))
         }
-        <span class="text-stone-300 dark:text-slate-600">{`/`}</span>
         <button
           id="magnifying-glass"
-          aria-label="Search"
-          class="flex items-center rounded border border-black/15 bg-neutral-100 px-2 py-1 font-sans text-xs transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/10 dark:bg-white/5 dark:hover:border-teal-400/40 dark:hover:bg-white/10 dark:hover:text-teal-300 dark:focus-visible:bg-white/10 dark:focus-visible:text-teal-300"
+          aria-label="Search (press /)"
+          class="flex items-center gap-1.5 text-muted transition-colors hover:text-ink"
         >
-          <svg
-            height="16"
-            stroke-linejoin="round"
-            viewBox="0 0 16 16"
-            width="16"
-            style="color: currentcolor;"
-            ><path
+          <svg height="15" viewBox="0 0 16 16" width="15" aria-hidden="true">
+            <path
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M3.5 7C3.5 5.067 5.067 3.5 7 3.5C8.933 3.5 10.5 5.067 10.5 7C10.5 7.88461 10.1718 8.69256 9.63058 9.30876L9.30876 9.63058C8.69256 10.1718 7.88461 10.5 7 10.5C5.067 10.5 3.5 8.933 3.5 7ZM9.96544 11.0261C9.13578 11.6382 8.11014 12 7 12C4.23858 12 2 9.76142 2 7C2 4.23858 4.23858 2 7 2C9.76142 2 12 4.23858 12 7C12 8.11014 11.6382 9.13578 11.0261 9.96544L14.0303 12.9697L14.5607 13.5L13.5 14.5607L12.9697 14.0303L9.96544 11.0261Z"
-              fill="currentColor"></path></svg
-          >
-          &nbsp;Search
+              fill="currentColor"></path>
+          </svg>
+          Search
         </button>
       </nav>
     </div>

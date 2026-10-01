@@ -1,4 +1,7 @@
 import defaultTheme from "tailwindcss/defaultTheme";
+
+const token = (name) => `rgb(var(--${name}) / <alpha-value>)`;
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: "class",
@@ -6,13 +9,22 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Geist Sans", ...defaultTheme.fontFamily.sans],
-        mono: ["Geist Mono", ...defaultTheme.fontFamily.mono],
-        display: ["Space Grotesk", "Geist Sans", ...defaultTheme.fontFamily.sans],
+        // Public Sans: headings, navigation, metadata. Literata: reading text.
+        sans: ["Public Sans Variable", ...defaultTheme.fontFamily.sans],
+        serif: ["Literata Variable", "Georgia", ...defaultTheme.fontFamily.serif],
+        mono: defaultTheme.fontFamily.mono,
       },
       colors: {
-        abyss: "#050b18", // page background (dark)
-        hull: "#0b1526", // card / surface (dark)
+        // Values live in global.css so light/dark swap in one place.
+        paper: token("paper"),
+        ink: token("ink"),
+        muted: token("muted"),
+        rule: token("rule"),
+        water: token("water"),
+        "water-soft": token("water-soft"),
+      },
+      maxWidth: {
+        measure: "40rem",
       },
     },
   },

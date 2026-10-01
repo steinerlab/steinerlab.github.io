@@ -66,158 +66,123 @@ const flagshipProjects = [
 
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
-      <section class="animate relative overflow-hidden rounded-2xl border border-white/10 bg-abyss">
-        <div class="absolute inset-0 bg-mission-grid" aria-hidden="true"></div>
-        <div class="absolute inset-0 bg-mission-glow" aria-hidden="true"></div>
-        <div class="absolute inset-0 bg-mission-scanlines opacity-60" aria-hidden="true"></div>
-        <div class="relative px-6 py-10 sm:px-10 sm:py-14">
-          <p class="font-mono text-xs uppercase tracking-[0.25em] text-teal-300">
-            <span class="text-teal-500" aria-hidden="true">//</span> Microwave remote sensing
-          </p>
-          <h1 class="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-slate-100 sm:text-5xl">
-            Steiner Lab <span class="font-light text-slate-500">|</span> Remote Sensing of <span class="text-teal-300">Terrestrial Hydrology</span>
-          </h1>
-          <div class="mt-6 max-w-2xl space-y-4 text-[15px] leading-relaxed text-slate-300">
-            <p>
-              The Steiner Lab is led by <Link href="https://www.ccny.cuny.edu/profiles/nick-steiner">Nicholas C. Steiner</Link> in the
-              Department of Earth and Atmospheric Sciences at <Link href="https://www.ccny.cuny.edu/eas">The City College of New York</Link>.
-              We study how microwave remote sensing captures terrestrial water and carbon cycle processes across scales.
-            </p>
-            <p>
-              Our team develops radar, thermal, and lidar approaches with missions such as
-              <Link href="https://nisar.jpl.nasa.gov/">NASA NISAR</Link>,
-              <Link href="https://smap.jpl.nasa.gov/">SMAP</Link>,
-              <Link href="https://ecostress.jpl.nasa.gov/">ECOSTRESS</Link>, and
-              <Link href="https://www.nasa.gov/mission/cygnss/">CYGNSS</Link>
-              to resolve wetland dynamics, flood hazards, and ecosystem resilience from the Arctic to the Amazon.
-            </p>
-            <p>
-              We combine field campaigns such as SMAPVEX19–22 and WETVEX with physics-based modeling and open data
-              pipelines to support applied decision making. If you’re interested in collaborating or joining the lab, get in touch.
-            </p>
-          </div>
+    <section>
+      <p class="font-sans text-[15px] font-semibold text-water">Steiner Lab</p>
+      <h1 class="mt-3 max-w-[16ch] font-sans text-[2.6rem] font-extrabold leading-[1.02] tracking-[-0.035em] text-ink sm:text-[3.6rem]">
+        Remote Sensing of Terrestrial Hydrology
+      </h1>
+      <div class="mt-8 max-w-measure space-y-4 text-[18px] leading-[1.7]">
+        <p>
+          The Steiner Lab is led by <Link href="https://www.ccny.cuny.edu/profiles/nick-steiner">Nicholas C. Steiner</Link> in the
+          Department of Earth and Atmospheric Sciences at <Link href="https://www.ccny.cuny.edu/eas">The City College of New York</Link>.
+          We study how microwave remote sensing captures terrestrial water and carbon cycle processes across scales.
+        </p>
+        <p>
+          Our team develops radar, thermal, and lidar approaches with missions such as
+          <Link href="https://nisar.jpl.nasa.gov/">NASA NISAR</Link>,
+          <Link href="https://smap.jpl.nasa.gov/">SMAP</Link>,
+          <Link href="https://ecostress.jpl.nasa.gov/">ECOSTRESS</Link>, and
+          <Link href="https://www.nasa.gov/mission/cygnss/">CYGNSS</Link>
+          to resolve wetland dynamics, flood hazards, and ecosystem resilience from the Arctic to the Amazon.
+        </p>
+        <p>
+          We combine field campaigns such as SMAPVEX19–22 and WETVEX with physics-based modeling and open data
+          pipelines to support applied decision making. If you’re interested in collaborating or joining the lab, get in touch.
+        </p>
+      </div>
+    </section>
+
+    <div class="mt-20 space-y-20">
+      <section>
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="max-w-measure">
+          Connect with Nick to talk about remote sensing or mentoring opportunities for students.
+        </p>
+        <div class="mt-4">
+          <SocialIcons icon_size={'text-2xl'} />
         </div>
       </section>
-      <div class="space-y-16">
-        <section class="animate space-y-6">
-          <span class="animate">
-            <h4 class="font-display font-semibold tracking-tight text-black dark:text-slate-100">
-              Let's Connect
-            </h4>
-            <article>
-              <p>
-                Connect with Nick to talk about remote sensing or mentoring opportunities for students.
-              </p>
-            </article>
-            <SocialIcons icon_size={'text-3xl'} />
-          </span>
-        </section>
 
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-display font-semibold tracking-tight text-black dark:text-slate-100">
-              Projects
-            </h2>
-          </div>
-          <ul class="not-prose grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {
-              flagshipProjects.map((project) => (
-                <li class="group border border-stone-200 bg-white dark:border-white/10 dark:bg-hull rounded-xl p-6 shadow-sm flex flex-col gap-4 transition-all duration-300 ease-in-out hover:border-teal-600/40 dark:hover:border-teal-400/40 dark:hover:shadow-[0_0_40px_-12px_rgba(45,212,191,0.35)]">
-                  <div class="flex items-center gap-4">
-                    <div class="h-12 w-12 shrink-0">
-                      <img src={project.logo} alt={`${project.name} logo`} class="h-12 w-12 object-contain" loading="lazy" />
-                    </div>
-                    <div>
-                      <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-teal-700 dark:text-teal-300/90">{project.role}</p>
-                      <h3 class="font-display text-lg font-semibold text-black dark:text-slate-100 group-hover:text-teal-700 dark:group-hover:text-teal-300 transition-colors duration-300">
-                        <Link href={project.link}>{project.name}</Link>
-                      </h3>
-                    </div>
-                  </div>
-                  <p class="text-sm text-stone-700 dark:text-slate-300">
-                    {project.summary}
-                  </p>
-                  <ul class="list-disc pl-5 space-y-1 text-sm text-stone-700 dark:text-slate-300 marker:text-teal-600 dark:marker:text-teal-400/70">
+      <section>
+        <h2 class="section-title">Projects</h2>
+        <ul class="not-prose ruled border-y border-rule">
+          {
+            flagshipProjects.map((project) => (
+              <li class="grid gap-x-6 gap-y-3 py-7 sm:grid-cols-[3.5rem_1fr]">
+                <img src={project.logo} alt={`${project.name} logo`} class="size-12 object-contain sm:size-14" loading="lazy" />
+                <div class="max-w-measure">
+                  <p class="meta">{project.role}</p>
+                  <h3 class="mt-0.5 font-sans text-[1.2rem] font-bold leading-snug tracking-[-0.01em] text-ink">
+                    <Link href={project.link} underline={false}>{project.name}</Link>
+                  </h3>
+                  <p class="mt-2">{project.summary}</p>
+                  <ul class="mt-3 list-disc space-y-1.5 pl-5 text-[16px] marker:text-muted">
                     {project.highlights.map((item) => (
                       <li>{item}</li>
                     ))}
                   </ul>
-                  <div>
-                    <Link href={project.link} class="text-sm font-medium text-teal-700 dark:text-teal-300 hover:underline">
-                      Read the project update →
-                    </Link>
-                  </div>
-                </li>
-              ))
-            }
-          </ul>
-        </section>
-
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-display font-semibold tracking-tight text-black dark:text-slate-100">
-              Research Interests
-            </h2>
-          </div>
-          <ul class="not-prose flex flex-col gap-4">
-            <li>Validating NISAR L- and S-band observables for wetlands inundation and freeze/thaw transitions.</li>
-            <li>Rapid-tasked small-satellite SAR workflows for near-real-time flood intelligence in the Arctic.</li>
-            <li>Heat mitigation and water stress analytics for urban forests using ECOSTRESS thermal time series.</li>
-          </ul>
-        </section>
-        
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-display font-semibold tracking-tight text-black dark:text-slate-100">
-              News
-            </h2>
-          </div>
-          <ul class="not-prose flex flex-col gap-4 overflow-y-auto max-h-[150px] scroll_bar">
-            {NEWS.map((item) => (
-              <li class="text-sm">
-                <span class="font-mono text-xs text-teal-700 dark:text-teal-300">[{item.date}]</span>
-                <span set:html={item.html} />
+                  <Link href={project.link} class="mt-3 inline-block font-sans text-[15px] font-medium text-water">
+                    Read the project update
+                  </Link>
+                </div>
               </li>
-            ))}
-          </ul>
-        </section>
+            ))
+          }
+        </ul>
+      </section>
 
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-display font-semibold tracking-tight text-black dark:text-slate-100">
-              Recent research
-            </h2>
-            <Link href="/publications"> See all research </Link>
-          </div>
-          <ul class="not-prose flex flex-col gap-4">
-            {
-              publications.map((publication) => (
-                <li>
-                  <PublicationCard entry={publication} />
-                </li>
-              ))
-            }
-          </ul>
-        </section>
+      <section>
+        <h2 class="section-title">Research Interests</h2>
+        <ul class="not-prose max-w-measure list-disc space-y-2 pl-5 marker:text-water">
+          <li>Validating NISAR L- and S-band observables for wetlands inundation and freeze/thaw transitions.</li>
+          <li>Rapid-tasked small-satellite SAR workflows for near-real-time flood intelligence in the Arctic.</li>
+          <li>Heat mitigation and water stress analytics for urban forests using ECOSTRESS thermal time series.</li>
+        </ul>
+      </section>
 
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-display font-semibold tracking-tight text-black dark:text-slate-100">
-              Latest posts
-            </h2>
-            <Link href="/blog"> See all posts </Link>
-          </div>
-          <ul class="not-prose flex flex-col gap-4">
-            {
-              blog.map((post) => (
-                <li>
-                  <ArrowCard entry={post} />
-                </li>
-              ))
-            }
-          </ul>
-        </section>
+      <section>
+        <h2 class="section-title">News</h2>
+        <ul class="not-prose ruled border-y border-rule">
+          {NEWS.map((item) => (
+            <li class="grid gap-x-6 gap-y-1 py-3.5 sm:grid-cols-[3.5rem_1fr]">
+              <span class="meta pt-0.5">{item.date}</span>
+              <span class="max-w-measure text-[16px]" set:html={item.html} />
+            </li>
+          ))}
+        </ul>
+      </section>
 
-      </div>
+      <section>
+        <div class="flex flex-wrap items-baseline justify-between gap-x-6">
+          <h2 class="section-title">Recent research</h2>
+          <Link href="/publications" class="mb-6 font-sans text-[15px]">See all research</Link>
+        </div>
+        <ul class="not-prose ruled border-y border-rule">
+          {
+            publications.map((publication) => (
+              <li>
+                <PublicationCard entry={publication} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section>
+        <div class="flex flex-wrap items-baseline justify-between gap-x-6">
+          <h2 class="section-title">Latest posts</h2>
+          <Link href="/blog" class="mb-6 font-sans text-[15px]">See all posts</Link>
+        </div>
+        <ul class="not-prose ruled border-y border-rule">
+          {
+            blog.map((post) => (
+              <li>
+                <ArrowCard entry={post} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </div>
   </Container>
 </Layout>

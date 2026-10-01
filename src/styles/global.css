@@ -2,10 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Palette
+  paper       sedge mist      #F3F5F2  /  peat night   #131A18
+  ink         peat            #18221F  /  lichen white #E2E8E4
+  muted       reed            #56635E  /  #97A49F
+  rule        silt            #CFD7D2  /  #2B3633
+  water       flood-map blue  #1D45B0  /  #9CB4FF
+*/
+:root {
+  --paper: 243 245 242;
+  --ink: 24 34 31;
+  --muted: 86 99 94;
+  --rule: 207 215 210;
+  --water: 29 69 176;
+  --water-soft: 222 230 247;
+}
+
+html.dark {
+  --paper: 19 26 24;
+  --ink: 226 232 228;
+  --muted: 151 164 159;
+  --rule: 43 54 51;
+  --water: 156 180 255;
+  --water-soft: 33 45 74;
+}
+
 html {
   overflow-y: auto;
   color-scheme: light;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 2rem;
 }
 
 html.dark {
@@ -18,86 +44,102 @@ body {
 }
 
 body {
-  @apply font-sans antialiased;
-  @apply flex flex-col;
-  @apply bg-white dark:bg-abyss;
-  @apply text-stone-700 dark:text-slate-300;
+  @apply flex flex-col bg-paper font-serif text-[17px] leading-[1.65] text-ink antialiased;
+  font-optical-sizing: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+nav,
+button,
+summary {
+  @apply font-sans;
 }
 
 ::selection {
-  @apply bg-teal-600/25 dark:bg-teal-400/25;
+  @apply bg-water/20;
+}
+
+:focus-visible {
+  @apply outline outline-2 outline-offset-2 outline-water;
 }
 
 header {
-  @apply fixed left-0 right-0 top-0 z-50 py-6;
-  @apply bg-white/80 dark:bg-abyss/80;
-  @apply saturate-150 backdrop-blur-md;
-  @apply border-b border-transparent dark:border-white/10;
+  @apply pb-4 pt-8;
 }
 
 main {
-  @apply flex-1 py-32;
+  @apply flex-1 pb-24 pt-12 sm:pt-16;
 }
 
 footer {
-  @apply py-6 text-sm;
-  @apply border-t border-stone-200/70 dark:border-white/10;
-  @apply text-stone-500 dark:text-slate-400;
+  @apply border-t border-rule py-8 font-sans text-sm text-muted;
+}
+
+/* Section heading used across pages */
+.section-title {
+  @apply mb-6 font-sans text-[1.375rem] font-bold leading-tight tracking-[-0.01em] text-ink;
+}
+
+/* Hairline-separated list: the default way content is listed on this site */
+.ruled > * + * {
+  @apply border-t border-rule;
+}
+
+/* Small sans metadata (dates, roles, venues) */
+.meta {
+  @apply font-sans text-sm text-muted;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Plain text link with the flood-blue underline */
+.link {
+  @apply text-ink underline decoration-water/40 decoration-1 underline-offset-[3px] transition-colors hover:text-water hover:decoration-water;
+}
+
+.tag {
+  @apply inline-block rounded-sm bg-water-soft px-2 py-0.5 font-sans text-sm text-water no-underline transition-colors hover:bg-water hover:text-paper;
 }
 
 article {
-  @apply prose prose-neutral max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
-  @apply prose-headings:font-display prose-headings:font-semibold;
-  @apply prose-headings:text-black prose-headings:dark:text-slate-100;
+  @apply prose max-w-full prose-img:mx-auto prose-img:my-auto;
+  @apply prose-headings:font-sans prose-headings:font-bold prose-headings:tracking-[-0.01em];
+  --tw-prose-body: rgb(var(--ink));
+  --tw-prose-headings: rgb(var(--ink));
+  --tw-prose-bold: rgb(var(--ink));
+  --tw-prose-links: rgb(var(--ink));
+  --tw-prose-bullets: rgb(var(--muted));
+  --tw-prose-counters: rgb(var(--muted));
+  --tw-prose-hr: rgb(var(--rule));
+  --tw-prose-quotes: rgb(var(--ink));
+  --tw-prose-quote-borders: rgb(var(--water));
+  --tw-prose-captions: rgb(var(--muted));
+  --tw-prose-code: rgb(var(--ink));
+  --tw-prose-th-borders: rgb(var(--rule));
+  --tw-prose-td-borders: rgb(var(--rule));
+  font-size: 17px;
+  line-height: 1.7;
 }
 
 @layer utilities {
   article a {
-    @apply font-sans text-current underline underline-offset-[3px];
-    @apply decoration-teal-600/40 dark:decoration-teal-400/40;
-    @apply transition-colors duration-300 ease-in-out;
+    @apply text-current underline decoration-water/40 decoration-1 underline-offset-[3px];
+    @apply transition-colors;
   }
   article a:hover {
-    @apply text-teal-700 dark:text-teal-300;
-    @apply decoration-teal-600/70 dark:decoration-teal-300/70;
+    @apply text-water decoration-water;
   }
-}
-
-/* Mission-control textures */
-.bg-mission-grid {
-  background-image:
-    linear-gradient(to right, rgb(148 163 184 / 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(148 163 184 / 0.07) 1px, transparent 1px);
-  background-size: 44px 44px;
-}
-
-.bg-mission-scanlines {
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0px,
-    transparent 3px,
-    rgb(2 6 16 / 0.25) 4px
-  );
-}
-
-.bg-mission-glow {
-  background:
-    radial-gradient(ellipse 60% 50% at 20% 10%, rgb(45 212 191 / 0.12), transparent 70%),
-    radial-gradient(ellipse 50% 40% at 85% 90%, rgb(34 211 238 / 0.08), transparent 70%);
 }
 
 .scroll_bar {
   scrollbar-width: thin;
-  scrollbar-color: #2dd4bf #0b1526;
 }
 
+/* Entrance animation retired; class kept as a harmless hook. */
 .animate {
-  @apply -translate-y-3 opacity-0;
-  @apply transition-all duration-300 ease-out;
-}
-
-.animate.show {
-  @apply translate-y-0 opacity-100;
+  opacity: 1;
 }
 
 html #back-to-top {
@@ -110,12 +152,12 @@ html.scrolled #back-to-top {
 
 /* shiki config */
 pre {
-  @apply border border-black/15 py-5 dark:border-white/20;
+  @apply rounded-sm border border-rule py-5;
 }
 
 :root {
-  --astro-code-color-text: #09090b;
-  --astro-code-color-background: #fafafa;
+  --astro-code-color-text: #18221f;
+  --astro-code-color-background: #eaeeeb;
   --astro-code-token-comment: #a19595;
   --astro-code-token-keyword: #f47067;
   --astro-code-token-string: #00a99a;
@@ -129,7 +171,7 @@ pre {
 
 .dark {
   --astro-code-color-text: #fafafa;
-  --astro-code-color-background: #09090b;
+  --astro-code-color-background: #0e1412;
   --astro-code-token-comment: #a19595;
   --astro-code-token-keyword: #f47067;
   --astro-code-token-string: #00a99a;
@@ -143,11 +185,11 @@ pre {
 
 /* copy code button on codeblocks */
 .copy-code {
-  @apply absolute right-3 top-3 grid size-9 place-content-center rounded border border-black/15 bg-neutral-100 text-center duration-300 ease-in-out dark:border-white/20 dark:bg-neutral-900;
+  @apply absolute right-3 top-3 grid size-9 place-content-center rounded-sm border border-rule bg-paper text-center;
 }
 
 .copy-code:hover {
-  @apply bg-[#E9E9E9] transition-colors dark:bg-[#232323];
+  @apply bg-water-soft transition-colors;
 }
 
 .copy-code:active {
