@@ -2,12 +2,9 @@
 import "../styles/global.css";
 import { ViewTransitions } from "astro:transitions";
 
-import "@fontsource/geist-sans";
-import "@fontsource/geist-mono";
-import "@fontsource/space-grotesk/400.css";
-import "@fontsource/space-grotesk/500.css";
-import "@fontsource/space-grotesk/600.css";
-import "@fontsource/space-grotesk/700.css";
+import "@fontsource-variable/public-sans";
+import "@fontsource-variable/literata/opsz.css";
+import "@fontsource-variable/literata/opsz-italic.css";
 
 interface Props {
   title: string;
@@ -109,13 +106,13 @@ const pagefindBase = import.meta.env.BASE_URL + "pagefind/";
     const systemThemeButton = document.getElementById("system-theme-button");
 
     function removeActiveButtonTheme(button) {
-      button?.classList.remove("bg-black/5");
-      button?.classList.remove("dark:bg-white/5");
+      button?.classList.remove("text-ink", "bg-water-soft");
+      button?.removeAttribute("aria-pressed");
     }
 
     function addActiveButtonTheme(button) {
-      button?.classList.add("bg-black/5");
-      button?.classList.add("dark:bg-white/5");
+      button?.classList.add("text-ink", "bg-water-soft");
+      button?.setAttribute("aria-pressed", "true");
     }
 
     removeActiveButtonTheme(lightThemeButton);
@@ -195,7 +192,7 @@ const pagefindBase = import.meta.env.BASE_URL + "pagefind/";
     } else if (userTheme === "dark") {
       toggleTheme(true);
     } else {
-      toggleTheme(true); // default to dark theme
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
     }
   }
 

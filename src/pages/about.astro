@@ -2,36 +2,32 @@
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import { ABOUT } from "@consts";
-import Image from "astro/components/Image.astro";
 import Link from "@components/Link.astro";
 ---
 
 <Layout title={ABOUT.TITLE} description={ABOUT.DESCRIPTION}>
   <Container>
-      <div class="space-y-10">
-        <div class="animate">
-          <h1 class="font-display text-3xl font-bold tracking-tight text-black dark:text-slate-100">
-            People
-          </h1>
-          <div class="mt-3 h-1 w-10 rounded-full bg-teal-600/50 dark:bg-teal-400"></div>
-        </div>
+      <div class="space-y-16">
+        <h1 class="font-sans text-[2.4rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-ink sm:text-[3rem]">
+          People
+        </h1>
 
         <!-- PI Profile -->
-        <section class="animate not-prose flex flex-col gap-4 text-left">
+        <section class="not-prose flex flex-col gap-4 text-left">
           <div class="flex flex-col sm:flex-row items-start gap-6">
             <div class="flex-shrink-0">
-              <div class="bg-neutral-300 dark:bg-hull w-[180px] h-[220px] rounded-xl overflow-hidden border border-transparent dark:border-white/10">
+              <div class="w-[180px] h-[220px] overflow-hidden rounded-sm bg-rule">
                 <img
                   src={`${import.meta.env.BASE_URL}headshot_2025_bmp.jpeg`}
                   alt={'Portrait of Dr. Nicholas C. Steiner'}
                   width={180}
                   height={220}
-                  class="object-cover w-[180px] h-[220px] rounded-xl"
+                  class="object-cover w-[180px] h-[220px]"
                 />
               </div>
             </div>
-            <div class="flex-1 space-y-4 text-stone-700 dark:text-slate-300">
-              <span class="inline-block rounded-full border border-teal-600/25 bg-teal-600/10 px-2.5 py-0.5 text-xs font-medium text-teal-800 dark:border-teal-400/25 dark:bg-teal-400/10 dark:text-teal-300">
+            <div class="max-w-measure flex-1 space-y-4">
+              <span class="meta block">
                 Principal Investigator
               </span>
               <p>
@@ -56,24 +52,24 @@ import Link from "@components/Link.astro";
         </section>
 
         <!-- Lab Members -->
-        <section class="animate not-prose space-y-6">
-          <h2 class="font-display text-lg font-semibold tracking-tight text-black dark:text-slate-100">
+        <section class="not-prose space-y-6">
+          <h2 class="section-title">
             Lab Members
           </h2>
 
           <!-- Current Students -->
-          <div class="space-y-2">
-            <h3 class="font-display text-base font-semibold tracking-tight text-black dark:text-slate-100">
+          <div class="space-y-4">
+            <h3 class="font-sans text-[1.05rem] font-semibold text-muted">
               Current Students
             </h3>
             <div class="flex flex-col sm:flex-row items-start gap-6">
               <div class="flex-shrink-0">
-                <div class="bg-white dark:bg-hull w-[140px] h-[180px] rounded-xl border border-stone-200 dark:border-white/10 flex items-center justify-center" role="img" aria-label="Portrait of Nicole West (photo coming soon)">
-                  <span class="font-display text-3xl font-semibold text-teal-700 dark:text-teal-300">NW</span>
+                <div class="w-[140px] h-[180px] rounded-sm bg-water-soft flex items-center justify-center" role="img" aria-label="Portrait of Nicole West (photo coming soon)">
+                  <span class="font-sans text-3xl font-bold text-water">NW</span>
                 </div>
               </div>
-              <div class="flex-1 space-y-2">
-                <span class="inline-block rounded-full border border-teal-600/25 bg-teal-600/10 px-2.5 py-0.5 text-xs font-medium text-teal-800 dark:border-teal-400/25 dark:bg-teal-400/10 dark:text-teal-300">
+              <div class="max-w-measure flex-1 space-y-2">
+                <span class="meta block">
                   Master’s student
                 </span>
                 <p class="text-left">
@@ -86,24 +82,24 @@ import Link from "@components/Link.astro";
           </div>
 
           <!-- Alumni and Collaborators -->
-          <div class="space-y-2">
-            <h3 class="font-display text-base font-semibold tracking-tight text-black dark:text-slate-100">
+          <div class="space-y-4">
+            <h3 class="font-sans text-[1.05rem] font-semibold text-muted">
               Alumni and Collaborators
             </h3>
             <div class="flex flex-col sm:flex-row items-start gap-6">
               <div class="flex-shrink-0">
-                <div class="bg-neutral-300 dark:bg-hull w-[140px] h-[180px] rounded-xl overflow-hidden border border-transparent dark:border-white/10">
+                <div class="w-[140px] h-[180px] overflow-hidden rounded-sm bg-rule">
                   <img
                     src={`${import.meta.env.BASE_URL}Otillia-Steadman.jpeg`}
                     alt={'Portrait of Otillia Steadman'}
                     width={140}
                     height={180}
-                    class="object-cover w-[140px] h-[180px] rounded-xl"
+                    class="object-cover w-[140px] h-[180px]"
                   />
                 </div>
               </div>
-              <div class="flex-1 space-y-2">
-                <span class="inline-block rounded-full border border-teal-600/25 bg-teal-600/10 px-2.5 py-0.5 text-xs font-medium text-teal-800 dark:border-teal-400/25 dark:bg-teal-400/10 dark:text-teal-300">
+              <div class="max-w-measure flex-1 space-y-2">
+                <span class="meta block">
                   Alumni · now at Columbia
                 </span>
                 <p class="text-left">
@@ -117,33 +113,16 @@ import Link from "@components/Link.astro";
         </section>
 
         <!-- Mentorship & Training -->
-        <section class="animate not-prose space-y-4">
-          <h2 class="font-display text-lg font-semibold tracking-tight text-black dark:text-slate-100">
+        <section class="not-prose space-y-4">
+          <h2 class="section-title">
             Mentorship & Training
           </h2>
-          <p class="text-left">
+          <p class="max-w-measure">
             <strong>Nick</strong> has mentored or co-mentored more than a dozen master's and undergraduate researchers across Sustainability in the Urban Environment, Data Science and Engineering, and Earth and Atmospheric Sciences programs.
             Several mentees have coauthored peer-reviewed publications in <em>The Cryosphere</em>, <em>Geochemistry</em>, and <em>Remote Sensing</em> journals, and his work with the CIPASS initiative supports broader participation in STEM.
           </p>
         </section>
 
-        <!-- Image -->
-        <div class="flex justify-center">
-          <div class="my-10 text-center">
-            <div class="bg-neutral-300 dark:bg-hull w-[350px] h-[250px] object-cover rounded-xl -rotate-6 overflow-hidden border border-transparent dark:border-white/10">
-              <Image
-                src={`${import.meta.env.BASE_URL}paper-teaser.jpg`}
-                alt={'False-color remote sensing composite used in Steiner Lab analyses.'}
-                width={350}
-                height={250}
-                class="w-[350px] h-[250px] object-cover rounded-xl overflow-hidden"
-              />
-            </div>
-            <p class="mt-4 text-sm">
-              Multi-sensor composites help quantify wetland inundation dynamics and vegetation structure.
-            </p>
-          </div>
-        </div>
       </div>
   </Container>
 </Layout>

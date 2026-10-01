@@ -29,12 +29,10 @@ const resolvedHref = isAbsoluteInternal
   href={resolvedHref}
   target={isExternal ? "_blank" : "_self"}
   class={cn(
-    "inline-block decoration-teal-600/40 hover:decoration-teal-600/70 focus-visible:decoration-teal-600/70 dark:decoration-teal-400/40 dark:hover:decoration-teal-300/70 dark:focus-visible:decoration-teal-300/70 hover:text-teal-700 focus-visible:text-teal-700 dark:hover:text-teal-300 dark:focus-visible:text-teal-300 transition-colors duration-300 ease-in-out",
-    underline && "underline underline-offset-[3px]",
+    "transition-colors hover:text-water",
+    underline && "underline decoration-water/40 decoration-1 underline-offset-[3px] hover:decoration-water",
     group && "group",
     className
   )}
   {...rest}
->
-  <slot />
-</a>
+><slot /></a>

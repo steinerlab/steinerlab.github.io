@@ -27,16 +27,17 @@ const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
 
 <Layout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
   <Container>
-      <div class="space-y-10">
-        <div class="space-y-4">
+      <h1 class="font-sans text-[2.4rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-ink sm:text-[3rem]">Blog</h1>
+      <div class="mt-10 border-t border-rule">
+        <div class="ruled">
           {
             years.map((year) => (
-              <section class="animate space-y-4">
-                <div class="font-display font-semibold tracking-tight text-black dark:text-slate-100">
+              <section class="grid gap-x-6 sm:grid-cols-[3.5rem_1fr]">
+                <h2 class="meta pt-[1.15rem]">
                   {year}
-                </div>
+                </h2>
                 <div>
-                  <ul class="not-prose flex flex-col gap-4">
+                  <ul class="not-prose ruled">
                     {posts[year].map((post) => (
                       <li>
                         <ArrowCard entry={post} />

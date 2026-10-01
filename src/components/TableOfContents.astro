@@ -29,11 +29,11 @@ function buildToc(headings: Heading[]) {
 
 <details
   open
-  class="animate rounded-lg border border-black/15 dark:border-white/20"
+  class="border-y border-rule font-sans text-[15px]"
 >
   <summary>Table of Contents</summary>
   <nav class="">
-    <ul class="py-3">
+    <ul class="pb-4">
       {toc.map((heading) => <TableOfContentsHeading heading={heading} />)}
     </ul>
   </nav>
@@ -41,14 +41,10 @@ function buildToc(headings: Heading[]) {
 
 <style>
   summary {
-    @apply cursor-pointer rounded-t-lg px-3 py-1.5 font-medium transition-colors;
+    @apply cursor-pointer py-3 font-semibold text-ink;
   }
 
   summary:hover {
-    @apply bg-black/5 dark:bg-white/5;
-  }
-
-  details[open] summary {
-    @apply bg-black/5 dark:bg-white/5;
+    @apply text-water;
   }
 </style>

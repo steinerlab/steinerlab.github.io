@@ -13,10 +13,10 @@ const publications = (await getCollection("publications"))
 <Layout title={RESEARCH.TITLE} description={RESEARCH.DESCRIPTION}>
   <Container>
       <div class="space-y-10">
-        <div class="animate font-display font-semibold tracking-tight text-black dark:text-slate-100">
+        <h1 class="font-sans text-[2.4rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-ink sm:text-[3rem]">
           Research
-        </div>
-        <ul class="animate not-prose flex flex-col gap-4">
+        </h1>
+        <ul class="not-prose ruled border-y border-rule">
           {
             publications.map((publication) => (
               <li>
