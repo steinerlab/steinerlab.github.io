@@ -9,8 +9,11 @@ import Link from "@components/Link.astro";
 <Layout title={ABOUT.TITLE} description={ABOUT.DESCRIPTION}>
   <Container>
       <div class="space-y-10">
-        <div class="animate font-semibold text-black dark:text-white">
-          People
+        <div class="animate">
+          <h1 class="text-3xl font-bold tracking-tight text-black dark:text-white">
+            People
+          </h1>
+          <div class="mt-3 h-1 w-10 rounded-full bg-neutral-300 dark:bg-neutral-600"></div>
         </div>
 
         <!-- PI Profile -->
@@ -28,6 +31,9 @@ import Link from "@components/Link.astro";
               </div>
             </div>
             <div class="flex-1 space-y-4">
+              <span class="inline-block rounded-full border border-neutral-200 dark:border-neutral-700 px-2.5 py-0.5 text-xs font-medium text-neutral-500 dark:text-neutral-400">
+                Principal Investigator
+              </span>
               <p>
                 <strong>Nicholas C. Steiner</strong> is a Research Assistant Professor in the Department of Earth and 
                 Atmospheric Sciences at The City College of New York. His work advances microwave remote sensing of 
@@ -66,7 +72,10 @@ import Link from "@components/Link.astro";
                   <span class="text-3xl font-semibold text-neutral-400 dark:text-neutral-500">NW</span>
                 </div>
               </div>
-              <div class="flex-1">
+              <div class="flex-1 space-y-2">
+                <span class="inline-block rounded-full border border-neutral-200 dark:border-neutral-700 px-2.5 py-0.5 text-xs font-medium text-neutral-500 dark:text-neutral-400">
+                  Master’s student
+                </span>
                 <p class="text-left">
                   <strong>Nicole West</strong> is a master’s student in Urban Sustainability at 
                   The City College of New York. She contributes to the HiFLOWS project, focusing 
@@ -93,7 +102,10 @@ import Link from "@components/Link.astro";
                   />
                 </div>
               </div>
-              <div class="flex-1">
+              <div class="flex-1 space-y-2">
+                <span class="inline-block rounded-full border border-neutral-200 dark:border-neutral-700 px-2.5 py-0.5 text-xs font-medium text-neutral-500 dark:text-neutral-400">
+                  Alumni · now at Columbia
+                </span>
                 <p class="text-left">
                   <strong>Otillia Steadman</strong> — former master’s student in the Steiner Lab at CCNY (now at Columbia University). She led a study on heat 
                   mitigation by urban canopies in New York City public housing, using ECOSTRESS and LiDAR data to quantify canopy 
