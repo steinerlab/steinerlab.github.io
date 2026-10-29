@@ -10,6 +10,10 @@ export type NewsItem = {
 
 export const NEWS: NewsItem[] = [
   {
+    date: "2026",
+    html: `<a href="/blog/2026-sardine-sar-in-the-browser" class="font-semibold">SARdine 1.0</a> is released: open-source, link-based radar imagery for flood and ice-jam response. <a href="https://nicksteiner.github.io/sardine/">Try it live</a>.`,
+  },
+  {
     date: "2025",
     html: "SMAPVEX19-22 field campaign results publish in IEEE JSTARS, highlighting the lab's contributions to forest soil moisture calibration.",
   },
